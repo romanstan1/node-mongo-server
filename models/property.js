@@ -6,6 +6,7 @@ const propertySchema = new mongoose.Schema({
   postcode: String,
   lat: Number,
   lng: Number,
+  placeId: String,
   availableDates: Array
 });
 
