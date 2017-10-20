@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="propertyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body ng-controller="PropertiesCtrl as properties">
+    <ul>
+      <li ng-repeat="property in properties.all">
+        <h1>{{ property.address }}, {{ property.postcode }}</h1>
+        <p><img ng-src="{{ property.image }}"></p>
+        <p>{{ property.bedrooms }} rooms</p>
+        <p>{{ property.bathrooms }} loos</p>
+        <p>£{{ property.askingPrice | number }}</p>
+        <p>{{ property.floorArea | number }} sq feet</p>
+        <p>{{ property.dateAvailable | date: 'dd/MM/yyyy'}}</p>
+        <p>
+          <button ng-click="properties.propertiesDelete(property)">Delete</button>
+        </p>
+      </li>
+    </ul>
+    <section>
+      <button ng-click="properties.showForm()">Add a New Property</button>
+      <form ng-submit="properties.propertiesCreate()" ng-show="properties.formVisible">
+        <input type="text" placeholder="Address" ng-model="properties.newProperty.address"><br>
+        <input type="text" placeholder="Postcode" ng-model="properties.newProperty.postcode"><br>
+        <input type="number" placeholder="Number of Bedrooms" ng-model="properties.newProperty.bedrooms"><br>
+        <input type="number" placeholder="Number of Bathrooms" ng-model="properties.newProperty.bathrooms"><br>
+        <input type="number" placeholder="Asking Price" ng-model="properties.newProperty.askingPrice"><br>
+        <input type="number" placeholder="Floor Area" ng-model="properties.newProperty.floorArea"><br>
+        <input type="date" placeholder="Date Available" ng-model="properties.newProperty.dateAvailable"><br>
+        <input type="text" placeholder="Image" ng-model="properties.newProperty.image">
+        <input type="submit" value="Add">
+      </form>
+    </section>
+    <!-- <section>
+      <button ng-click="properties.showEditForm()">Edit New Property</button>
+      <form ng-submit="properties.propertiesEdit()" ng-show="properties.editFormVisible">
+        <input type="text" placeholder="Address" ng-model="properties.newProperty.address"><br>
+        <input type="text" placeholder="Postcode" ng-model="properties.newProperty.postcode"><br>
+        <input type="number" placeholder="Number of Bedrooms" ng-model="properties.newProperty.bedrooms"><br>
+        <input type="number" placeholder="Number of Bathrooms" ng-model="properties.newProperty.bathrooms"><br>
+        <input type="number" placeholder="Asking Price" ng-model="properties.newProperty.askingPrice"><br>
+        <input type="number" placeholder="Floor Area" ng-model="properties.newProperty.floorArea"><br>
+        <input type="date" placeholder="Date Available" ng-model="properties.newProperty.dateAvailable"><br>
+        <input type="text" placeholder="Image" ng-model="properties.newProperty.image">
+        <input type="submit" value="Add">
+      </form>
+    </section> -->
+
+  </body>
+</html>
