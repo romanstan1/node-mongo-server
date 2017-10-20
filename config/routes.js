@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const properties = require('../controllers/properties');
 
-router.route('/properties')
+router.route('/appointments')
   .get(properties.index)
   .post(properties.create);
 
-router.route('/properties/:id')
+router.route('/appointments/:id')
   .get(properties.show)
   .put(properties.update)
   .delete(properties.delete);
