@@ -15,9 +15,14 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
+// collection.findOne({_id: doc_id}, function(err, document) {
+//   console.log(document.name);
+// });
+
 function showRoute(req, res, next) {
   Property
-    .findById(req.params.id)
+    .findOne({placeId:req.params.placeId})
+    // .findById(req.params.id)
     .exec()
     .then((properties) => {
       if(!properties) return res.notFound();

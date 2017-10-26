@@ -5,7 +5,7 @@ router.route('/appointments')
   .get(properties.index)
   .post(properties.create);
 
-router.route('/appointments/:id')
+router.route('/appointments/:placeId')
   .get(properties.show)
   .put(properties.update)
   .delete(properties.delete);
