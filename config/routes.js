@@ -3,7 +3,6 @@ const properties = require('../controllers/properties');
 const chatbot = require('../controllers/chatbot');
 let bodyParser = require('body-parser');
 
-
 router.route('/appointments')
   .get(properties.index)
   .post(properties.create);
