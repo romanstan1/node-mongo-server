@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const properties = require('../controllers/properties');
 const chatbot = require('../controllers/chatbot');
+const google = require('../controllers/google');
+
+router.route('/google/:latlng')
+  .get(google.index);
 
 router.route('/appointments')
   .get(properties.index)
