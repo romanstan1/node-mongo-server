@@ -26,7 +26,8 @@ const fetchPlaceDetails = (result) => {
       website: data.result.website,
       fullAddress: data.result.formatted_address,
       place_id: result.place_id,
-      formatted_address: data.formatted_address
+      formatted_address: data.formatted_address,
+      geometry: data.result.geometry
     }
   })
   .catch(error => console.log(error))
@@ -45,7 +46,7 @@ const fetchDistanceDetails = (latlng,result) => {
       website: result.website,
       fullAddress: result.fullAddress,
       place_id: result.place_id,
-
+      geometry:result.geometry,
       proximity_to_location: {lat, lng},
       proximity: data.rows[0].elements[0]
     }
