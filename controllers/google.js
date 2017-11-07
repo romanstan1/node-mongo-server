@@ -43,9 +43,8 @@ const fetchDistanceDetails = (latlng,result) => {
       phone_number: result.formatted_phone_number,
       opening_hours: result.opening_hours,
       website: result.website,
-      fullAddress: result.formatted_address,
+      fullAddress: result.fullAddress,
       place_id: result.place_id,
-      formatted_address: result.formatted_address,
 
       proximity_to_location: {lat, lng},
       proximity: data.rows[0].elements[0]
