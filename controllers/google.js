@@ -6,7 +6,7 @@ function fetchDetails(req, res) {
     .then((resp) => resp.json())
     .then((data) => data.results)
     .then(results => Promise.all(results.map(result => fetchPlaceDetails(result))))
-    .then(results => Promise.all(results.map(result => fetchDistanceDetails(lat,lng,result))))
+    .then(results => Promise.all(results.map(result => fetchDistanceDetails(latlng,result))))
     // .then(newResults => newResults)
     .then((newResults) => res.json(newResults))
     .catch(error => console.log(error))
@@ -16,6 +16,7 @@ const fetchPlaceDetails = (result) => {
   return fetch(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${result.place_id}&key=${process.env.REACT_APP_GMAPS_KEY}`)
   .then(resp => resp.json())
   .then(data => {
+    console.log("data",data)
     return {
       ...result,
       name: result.name.slice(0, 20) === 'Specsavers Opticians'?
@@ -30,13 +31,13 @@ const fetchPlaceDetails = (result) => {
   .catch(error => console.log(error))
 }
 
-const fetchDistanceDetails = (lat,lng,result) => {
-  return fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${lat},${lng}&destinations=place_id:${result.place_id}&key=${process.env.REACT_APP_GMAPS_KEY}`)
+const fetchDistanceDetails = (latlng,result) => {
+  return fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${latlng}&destinations=place_id:${result.place_id}&key=${process.env.REACT_APP_GMAPS_KEY}`)
   .then(resp => resp.json())
   .then(data => {
     return {
       ...result,
-      proximity_to_location: {lat, lng},
+      proximity_to_location: latlng,
       proximity: data.rows[0].elements[0]
     }
   })
