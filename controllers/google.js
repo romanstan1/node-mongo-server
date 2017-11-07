@@ -41,7 +41,7 @@ const fetchDistanceDetails = (latlng,result) => {
     const lng = latlng.split(',')[1]
     return {
       name: result.name,
-      phone_number: result.formatted_phone_number,
+      phone_number: result.phone_number,
       opening_hours: result.opening_hours,
       website: result.website,
       fullAddress: result.fullAddress,
