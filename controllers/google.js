@@ -1,12 +1,8 @@
 var fetch = require('node-fetch');
 
 function fetchDetails(req, res) {
-    const latlng = req.params.latlng.split(',')
-    const lat = latlng[0]
-    const lng = latlng[1]
-    console.log("lat lng",lat, lng)
-
-    return fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&rankby=distance&keyword=specsavers+opticians&key=${process.env.REACT_APP_GMAPS_KEY}`)
+    const latlng = req.params.latlng
+    return fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latlng}&rankby=distance&keyword=specsavers+opticians&key=${process.env.REACT_APP_GMAPS_KEY}`)
     .then((resp) => resp.json())
     .then((data) => data.results)
     .then(results => Promise.all(results.map(result => fetchPlaceDetails(result))))
