@@ -2,6 +2,7 @@ const router = require('express').Router();
 const properties = require('../controllers/properties');
 const chatbot = require('../controllers/chatbot');
 const google = require('../controllers/google');
+const topic = require('../controllers/topic');
 
 router.route('/google/:latlng')
   .get(google.index);
@@ -17,6 +18,9 @@ router.route('/appointments/:placeId')
 
 router.route('/chatbot')
   .post(chatbot.makeQuery);
+
+router.route('/registertopic')
+  .post(topic.register);
 
 
 router.all('*', (req, res) => res.notFound());
