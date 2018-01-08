@@ -2,11 +2,12 @@ var key = process.env.FIREBASE_SERVER_KEY;
 var fetch = require('node-fetch');
 
 function register(req, res) {
-  console.log('Token: ',req.body.token);
-
   const token = req.body.token
   const topic = req.body.topic
-  const url = "https://iid.googleapis.com/iid/v1/" + token + "/rel/topics/all";
+  console.log('Token: ',token);
+  console.log('Topic: ',topic);
+
+  const url = "https://iid.googleapis.com/iid/v1/" + token + "/rel/topics/" + topic;
 
   fetch(url,
     {
