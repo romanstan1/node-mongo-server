@@ -2,10 +2,14 @@ const router = require('express').Router();
 const properties = require('../controllers/properties');
 const chatbot = require('../controllers/chatbot');
 const google = require('../controllers/google');
+const darksky = require('../controllers/darksky');
 const topic = require('../controllers/topic');
 
 router.route('/google/:latlng')
   .get(google.index);
+
+router.route('/darksky/:latlng')
+  .get(darksky.index);
 
 router.route('/appointments')
   .get(properties.index)
