@@ -117,11 +117,11 @@ Property
       },
       {
         date: afterDate(2),
-        times: ['10.20am','10.30am','12.20am','1.10pm', '3.30pm','3.50pm', '4.40pm' ]
+        times: ['10.20am','10.30am','12.20pm','1.10pm', '3.30pm','3.50pm', '4.40pm' ]
       },
       {
         date: afterDate(3),
-        times: ['10.25am','12.30am','12.50am','1.10pm', '1.30pm', '2.30pm','3.30pm','3.55pm', '4.30pm' ]
+        times: ['10.25am','12.30pm','12.50pm','1.10pm', '1.30pm', '2.30pm','3.30pm','3.55pm', '4.30pm' ]
       },
       {
         date: afterDate(5),
