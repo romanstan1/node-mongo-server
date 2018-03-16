@@ -49,10 +49,14 @@ const availableDates = [
 
 function indexRoute(req, res, next) {
   // Promise.then(() => res.json(availableDates))
+  console.log("reqest recieved")
   Property
     .find()
     .exec()
-    .then((properties) => res.json(properties))
+    .then((properties) => {
+      console.log("response here")
+      return res.json(properties)
+    })
     .catch((next) => res.json(someData))
 }
 

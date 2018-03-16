@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const properties = require('../controllers/properties');
+const skillsMatrix = require('../controllers/skillsMatrix');
 const chatbot = require('../controllers/chatbot');
 const google = require('../controllers/google');
 const darksky = require('../controllers/darksky');
@@ -14,6 +15,9 @@ router.route('/darksky/:latlng')
 router.route('/appointments')
   .get(properties.index)
   .post(properties.create);
+
+router.route('/skillsMatrix')
+  .get(skillsMatrix.index);
 
 router.route('/appointments/:placeId')
   .get(properties.show)
