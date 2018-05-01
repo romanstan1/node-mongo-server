@@ -20,7 +20,7 @@ function register(req, res) {
     })
     .then((resp) => {
       console.log("Resp: ", resp)
-      return resp.json()
+      return res.json(resp)
     })
     .catch(error => {
       console.log('Error: ', error)
