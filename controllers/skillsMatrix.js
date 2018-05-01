@@ -35,7 +35,7 @@ const skillsData = [
 			"type": "person",
 			"name": "Caron Clinnick",
 			"location": "Chichester",
-			"currentSkills": null,
+			"currentSkills": [],
 			"desiredSkills": [
 				"1049",
 				"1055",
@@ -1955,7 +1955,7 @@ const skillsData = [
 			"type": "person",
 			"name": "Flor Gisborne",
 			"location": "Chichester",
-			"currentSkills": null,
+			"currentSkills": [],
 			"desiredSkills": [
 				"1017",
 				"1033",
@@ -1975,7 +1975,7 @@ const skillsData = [
 			"type": "person",
 			"name": "Christos Marlin",
 			"location": "Chichester",
-			"currentSkills": null,
+			"currentSkills": [],
 			"desiredSkills": [
 				"1017",
 				"1000",
