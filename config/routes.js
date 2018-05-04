@@ -5,6 +5,7 @@ const chatbot = require('../controllers/chatbot');
 const google = require('../controllers/google');
 const darksky = require('../controllers/darksky');
 const topic = require('../controllers/topic');
+const notification = require('../controllers/notification');
 
 router.route('/google/:latlng')
   .get(google.index);
@@ -29,6 +30,9 @@ router.route('/chatbot')
 
 router.route('/registertopic')
   .post(topic.register);
+
+router.route('/notification')
+  .post(notification.post);
 
 
 router.all('*', (req, res) => res.notFound());
