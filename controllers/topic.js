@@ -1,6 +1,7 @@
 var key = process.env.FIREBASE_NOTICATION_SERVER_PERFORMANCE_KEY;
 var fetch = require('node-fetch');
 
+
 function register(req, res) {
   const token = req.body.token
   const topic = req.body.topic
