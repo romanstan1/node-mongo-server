@@ -1,5 +1,6 @@
 // var key = process.env.FIREBASE_SERVER_KEY;
-var key = process.env.FIREBASE_SERVER_SPECS_KEY;
+// var key = process.env.FIREBASE_SERVER_SPECS_KEY;
+var key = "AAAATlsAkEw:APA91bH52nZOYAjwYa8DRBwuY_qJB8vkeLSmTtojtTsfVV3umPONEurgSg-O-NgjJSUZKUoraFXypNyo5U_9-KnvvATPhjBx9KhejKHMMw64INc36It3vLxrs3Am2CMZKcHs1sTwjvzgdUUm6wvfqYcbmnu_UWrqLg"
 var fetch = require('node-fetch');
 
 function register(req, res) {

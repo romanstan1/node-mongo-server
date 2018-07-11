@@ -4,20 +4,21 @@ function post(req, res) {
   const title = req.body.title;
   const body = req.body.body;
   const icon = req.body.icon;
+  const key = process.env.FIREBASE_NOTICATION_SERVER_PERFORMANCE_KEY;
 
   const content = {
     notification: {
       title, body, icon,
       click_action: "/index.html"
     },
-    to : "/topics/ecomm"
+    to : "/topics/innovation"
   }
 
   fetch('https://fcm.googleapis.com/fcm/send', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'key=AAAAgDqojms:APA91bEpE1orvJ_OGqmcpfrvMphVeL47KDccfy6n226n2Equ8GIamYQeFDYqEv5gMR8oXAZcQH8CkGlOjTVX9Zyj06MVz5LRM8h2ixO_cv84yhlm4HXA4uQbYyXQ6ik1PI8pVSRotsc8'
+      'Authorization': 'key=' + key
     },
     body: JSON.stringify(content)
   })

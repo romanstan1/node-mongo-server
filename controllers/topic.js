@@ -1,5 +1,5 @@
-// var key = process.env.FIREBASE_SERVER_KEY;
-var key = process.env.FIREBASE_SERVER_SPECS_KEY;
+var key = process.env.FIREBASE_NOTICATION_SERVER_PERFORMANCE_KEY;
+
 var fetch = require('node-fetch');
 
 function register(req, res) {
@@ -19,7 +19,7 @@ function register(req, res) {
       }
     })
     .then((resp) => {
-      console.log("Resp: ", resp)
+      // console.log("Resp: ", resp)
       return res.json(resp)
     })
     .catch(error => {
